@@ -8,7 +8,10 @@ let gameOver = false;
 
 function main(currentTime) {
   if (gameOver) {
-    return alert('you lose');
+    if (confirm('You lost. Press ok to restart.')) {
+      window.location = '/';
+    }
+    return;
   }
   window.requestAnimationFrame(main);
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000;
